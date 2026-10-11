@@ -83,16 +83,26 @@ git push -u origin main
 
 当前首页已设置面向软件定制开发与 AI 应用开发业务的中文标题、描述、社交分享文案、搜索引擎抓取指令及 `schema.org`（结构化数据）。页面也保留了英文切换，但**中文和英文暂时共用同一个地址**，不能视作两套独立可收录语言页面。
 
-### 正式上线后补充
+### 正式官网域名与抓取配置
 
-1. 确认官网最终可公开访问的生产环境地址（例如 `https://weike.usekedo.com/`；这是此前讨论的候选域名，只有绑定生效后才使用）。
-2. 再为该正式地址添加 `<link rel="canonical">`、`og:url` 和网站首页 `sitemap.xml`，并在 `robots.txt` 中引用站点地图。**切勿把未绑定、重定向错误或测试域名写成规范网址**。
-3. 在 [Google Search Console（谷歌搜索管理平台）](https://search.google.com/search-console) 和 [Bing Webmaster Tools（必应站长工具）](https://www.bing.com/webmasters/) 验证网站、提交正式域名的站点地图，使用 URL 检查工具申请抓取。面向中国内地用户，还可考虑百度搜索资源平台。
-4. 通过实际网址确认网站返回 HTTP 200、页面可以公开访问，没有 `noindex` 或访问密码，且表单不会被任何结构化数据或部署修改影响。
-5. SEO 不是一次配置就能保证排名。后续应根据客户搜索需求增加有真实案例、交付过程、常见问题、服务说明等原创内容；勿伪造客户案例、公司地址、评价或运营数据。
+- **正式网站**：https://weike.usekedo.com/
+- **规范网址（Canonical）**：https://weike.usekedo.com/
+- **XML 站点地图**：https://weike.usekedo.com/sitemap.xml
+- **爬虫规则**：https://weike.usekedo.com/robots.txt
+- 首页包含 Open Graph 分享元数据与对应官网 URL、`schema.org` Organization / WebSite / WebPage 数据。
+- 当前是单页网站，站点地图只包含首页；新增独立可公开访问的页面时再补充对应 URL。
+- 中文和英文暂时通过客户端切换、共用首页 URL，**不是**两套独立收录页面，因此不配置错误的双语 `hreflang`。
+
+### 上线后提交搜索引擎
+
+1. 在 [Google Search Console（谷歌搜索管理平台）](https://search.google.com/search-console) 验证域名所有权，并提交 `https://weike.usekedo.com/sitemap.xml`。可以先使用 URL 检查工具请求索引首页。
+2. 在 [Bing Webmaster Tools（必应站长工具）](https://www.bing.com/webmasters/) 验证站点并提交相同的站点地图。
+3. 通过正式地址打开首页、`robots.txt` 和 `sitemap.xml`，确认返回正常、内容没有被平台访问密码拦截；在 Search Console 检查索引覆盖情况。
+4. 面向中国内地用户，可以按可用性再评估百度搜索资源平台的站点验证和提交方式。
+5. SEO 不保证收录时间或搜索排名。后续持续完善有真实依据的服务介绍、项目实践、常见问题和案例，不编造客户评价、地址或运营数字。
 
 ### 当前页面的 SEO 关键词重点
 
 企业软件定制开发、软件定制开发、AI 应用开发、智能客服开发、企业系统开发、微信小程序开发、系统集成、系统二次开发、技术合作。
 
-当前未写入 `canonical` 与 `sitemap.xml`，是因为 GitHub 代码尚不能证明最终公网域名已经绑定成功。待确认真实正式地址后再补齐。
+
