@@ -1,0 +1,11 @@
+# Vercel / IDE / local secrets
+.vercel/
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+node_modules/
+*.log
